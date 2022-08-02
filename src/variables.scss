@@ -1,0 +1,54 @@
+// Color
+// Branding colors
+
+// Primary
+$cfa-red: #cf2045;
+$cfa-red-dark: #aa1a37;
+$cfa-blue: #359ed3;
+$cfa-blue-dark: #0d77ac;
+
+// Secondary
+$light-grey: #bababa;
+$dark-grey: #606060; /* this is not used anywhere */
+$off-white: #f5f5f5;
+
+$gray-600: #6c757d;
+$black: #333333;
+$white: #fff;
+
+$primary: $cfa-red;
+$highlight: lighten($primary, 0%);
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Links
+// Todo: update these to be blue and create a style mixin
+// The current values are used in bootstrap components that are not used.
+$link-color: $cfa-red;
+$link-hover-color: $cfa-red;
+$link-hover-decoration: underline;
+$link-decoration: none;
+
+// Tooltips
+$tooltip-bg: #3194c3;
+$tooltip-color: white;
+$tooltip-opacity: 0.9;
+
+// Fonts! (TODO)
+$font-family-base: "Source Sans Pro", sans-serif;
+$font-family-alt: "Work Sans", sans-serif;
+
+$font-weight-regular: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$zindex-tooltip: 1070;
+
+$fontsize-xs: 14px;
+$fontsize-sm: 16px;
+$fontsize-md: 20px;
+$fontsize-lg: 32px;
+$fontsize-xl: 48px;
