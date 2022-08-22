@@ -1,47 +1,27 @@
 import React, { useState } from "react";
 import { Link } from "gatsby";
 import github from "../img/github-icon.svg";
-import logo from "../img/logo.svg";
+import logo from "../img/cfc_logo_2021.svg";
+import Button from "./Button";
 import "./Navbar.scss";
 
 const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
   const [navBarActiveClass, setNavBarActiveClass] = useState("");
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     active: false,
-  //     navBarActiveClass: "",
-  //   };
-  // }
 
   const toggleHamburger = (isActive) => {
     setIsActive(!isActive);
     setNavBarActiveClass(isActive ? "" : "is-active"); // ?
-    // toggle the active boolean in the state
-
-    // this.setState(
-    //   {
-    //     active: !this.state.active,
-    //   },
-    //   // after state has been updated,
-    //   () => {
-    //     // set the class in state for the navbar accordingly
-    //     this.state.active
-    //       ? this.setState({
-    //           navBarActiveClass: "is-active",
-    //         })
-    //       : this.setState({
-    //           navBarActiveClass: "",
-    //         });
-    //   }
-    // );
   };
 
   return (
     <>
       <nav class="navbar" aria-label="main">
-        <button aria-label="open" onClick="toggleMenu()" class="menu-icon">
+        <button
+          aria-label="open"
+          onClick={() => toggleHamburger()}
+          class="menu-icon"
+        >
           <img
             src="/images/hamburger-open-menu.svg"
             alt="open menu"
@@ -50,33 +30,36 @@ const Navbar = () => {
         </button>
         <ul class="internal-links">
           <li id="logo-container">
-            <a href="{{ site.baseurl }}/">
+            <Link to="/">
               <img
                 class="brigade-logo"
-                src="/images/cfc_logo_2021.svg"
+                src={logo}
                 alt="Code For Chicago Logo"
               />
-            </a>
+            </Link>
           </li>
           <li class="hideable-int-link">
-            <a href="/projects">Projects</a>
+            <Link to="/projects">Projects</Link>
           </li>
           <li class="hideable-int-link">
-            <a href="/portfolio">Portfolio</a>
+            <Link to="/portfolio">Portfolio</Link>
           </li>
           <li class="hideable-int-link">
-            <a href="/join">Join Us</a>
+            <Link to="/join">Join Us</Link>
           </li>
           <li class="hideable-int-link">
-            <a href="/about">About</a>
+            <Link to="/about">About</Link>
           </li>
         </ul>
         <div class="donate-and-socials">
           <ul class="external-links">
             <li class="social-logo">
-              <a href="https://www.meetup.com/code-for-chicago" target="_blank">
+              <Link
+                href="https://www.meetup.com/code-for-chicago"
+                target="_blank"
+              >
                 <img class="social-img" src="/images/meetup.svg" alt="Meetup" />
-              </a>
+              </Link>
             </li>
             <li class="social-logo">
               <a
@@ -92,13 +75,12 @@ const Navbar = () => {
               </a>
             </li>
           </ul>
-          <a
+          <Button
             href="https://www.codeforamerica.org/donate-to-a-brigade?utm_campaign=Code%20for%20Chicago&utm_source=Brigade%20site"
-            target="blank"
-            class="button donate-button"
+            variant="donate"
           >
             Donate
-          </a>
+          </Button>
         </div>
       </nav>
       <nav aria-label="site" aria-expanded="false" class="mobile-nav">

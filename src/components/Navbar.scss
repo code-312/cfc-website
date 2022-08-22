@@ -1,0 +1,162 @@
+@import "../variables.scss";
+
+.navbar {
+  border-bottom: 1px solid rgba($light-grey, 0.5);
+  display: flex;
+  height: 4rem;
+  justify-content: center;
+  padding: 0 1.5rem;
+  position: relative;
+  width: 100%;
+
+  a {
+    text-decoration: none;
+  }
+
+  & [aria-current] {
+    border-bottom: 2px solid $cfa-red;
+  }
+
+  @media (min-width: 360px) {
+    padding: 1rem 1.5rem;
+  }
+
+  @media (min-width: $breakpoint-sm) {
+    padding: 1rem 3rem;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    height: 6rem;
+    padding: 1.5rem 6rem;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    justify-content: space-between;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    padding: 1.5rem 6rem;
+  }
+
+  @media (min-width: 1592px) {
+    padding: 0 calc((100% - 1400px) / 2);
+  }
+}
+
+.menu-icon {
+  display: none;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  border: none;
+  background: none;
+  width: 28px;
+
+  @media (max-width: $breakpoint-lg) {
+    position: absolute;
+    left: 96px;
+    display: inline;
+  }
+
+  @media (max-width: 768px) {
+    left: 48px;
+  }
+
+  @media (max-width: 360px) {
+    left: 24px;
+  }
+}
+
+.internal-links {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  li {
+    margin-right: 2rem;
+  }
+  a {
+    color: $black;
+  }
+
+  @media (max-width: $breakpoint-lg) {
+    margin-left: 3rem; // account for donate button in logo centering
+  }
+}
+
+#logo-container {
+  display: inline;
+  overflow: hidden;
+  height: 100%;
+  margin-right: 48px;
+
+  @media (max-width: $breakpoint-lg) {
+    margin: 0 auto;
+  }
+}
+
+.brigade-logo {
+  width: 120px;
+  height: auto;
+
+  @media (max-width: $breakpoint-sm) {
+    width: 85px;
+  }
+}
+
+.hideable-int-link {
+  // menu goes mobile
+  @media (max-width: $breakpoint-lg) {
+    display: none;
+  }
+}
+
+.external-links {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 0;
+  display: block;
+  align-self: center;
+  margin-right: 24px;
+
+  @media (max-width: $breakpoint-lg) {
+    display: none;
+  }
+}
+
+.social-logo {
+  display: inline;
+  margin-left: 1rem;
+  justify-self: center;
+  // mobile?
+  .social-logo:first-child {
+    margin-left: 0;
+  }
+}
+
+.social-img {
+  height: 1.5rem;
+  width: 1.5rem;
+  z-index: 1;
+}
+
+// .donate-button {
+//   position: absolute;
+//   top: 0.5rem;
+//   right: 1.5rem;
+
+//   @media (min-width: $breakpoint-sm) {
+//     right: 4rem;
+//   }
+
+//   @media (min-width: $breakpoint-md) {
+//     top: 1.5rem;
+//     right: 6rem;
+//   }
+
+//   @media (min-width: 1592px) {
+//     right: calc((100% - 1400px) / 2);
+//   }
+// }
